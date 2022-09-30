@@ -3,6 +3,7 @@
 //  A simple discord musique bot
 */
 
+const { PermissionFlagsBits } = require('discord.js');
 const discord = require('discord.js');
 require ('dotenv').config();
 const client = new discord.Client({ intents: [ 
@@ -41,7 +42,6 @@ client.on('messageCreate', async message => {
     if (message.author.bot || !message.guild) return
     const prefix = '.'
     if (!message.content.startsWith(prefix)) return
-    if (!message.channel.permissionsFor(message.guild.me).has('SEND_MESSAGES')) return console.log('I do not have permission to send messages in this channel!')
     const args = message.content.slice(prefix.length).trim().split(/ +/g)
     const command = args.shift().toLowerCase()
     const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command))
