@@ -56,25 +56,25 @@ client.on('messageCreate', async message => {
   })
 
 client.distube.on("playSong", (queue, song) => {
-    queue.textChannel.send(`Playing \`${song.name}\` - \`${song.formattedDuration}\`
+    queue.textChannel.send(`Joue \`${song.name}\` - \`${song.formattedDuration}\`
 
 Requested by: ${song.user}`);
 });
 
 client.distube.on("addSong", (queue, song) => {
-    queue.textChannel.send(`Added \`${song.name}\` - \`${song.formattedDuration}\` to the queue by ${song.user}`);
+    queue.textChannel.send(`Ajoute \`${song.name}\` - \`${song.formattedDuration}\` a la file d'attente par ${song.user}`);
 });
 
 client.distube.on("playList", (queue, playlist, song) => {
-    queue.textChannel.send(`Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).
+    queue.textChannel.send(`Joue \`${playlist.name}\` playlist (${playlist.songs.length} Musique).
 
-Requested by: ${song.user}
+Demandé par: ${song.user}
 
-Now playing \`${song.name}\` - \`${song.formattedDuration}\``);
+Joue \`${song.name}\` - \`${song.formattedDuration}\``);
 });
 
 client.distube.on("addList", (queue, playlist) => {
-    queue.textChannel.send(`Added \`${playlist.name}\` playlist (${playlist.songs.length} songs) to queue`);
+    queue.textChannel.send(`Ajoute \`${playlist.name}\` playlist (${playlist.songs.length} musique) a la file d'attente`);
 });
 
 client.distube.on("error", (message, e) => {
