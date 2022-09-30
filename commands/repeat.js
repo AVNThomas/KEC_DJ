@@ -1,6 +1,7 @@
 module.exports = {
     name: 'repeat',
     aliases: ['loop', 'rp'],
+    description: 'Répète la musique en cours de lecture / dans la file d\'attente',
     inVoiceChannel: true,
     run: async (client, message, args) => {
       const queue = client.distube.getQueue(message)

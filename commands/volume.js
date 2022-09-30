@@ -1,6 +1,7 @@
 module.exports = {
     name: 'volume',
     aliases: ['v', 'set', 'set-volume'],
+    description: 'Change le volume de la musique',
     inVoiceChannel: true,
     run: async (client, message, args) => {
       const queue = client.distube.getQueue(message)

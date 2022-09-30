@@ -36,6 +36,7 @@ fs.readdir('./commands/', (err, files) => {
       if (cmd.aliases) cmd.aliases.forEach(alias => client.aliases.set(alias, cmd.name))
     })
   })
+
 client.on('messageCreate', async message => {
     if (message.author.bot || !message.guild) return
     const prefix = '.'

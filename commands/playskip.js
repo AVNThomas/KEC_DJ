@@ -1,6 +1,7 @@
 module.exports = {
   name: 'playskip',
   aliases: ['pk'],
+  description: 'Joue une musique et saute la musique en cours de lecture',
   inVoiceChannel: true,
   run: async (client, message, args) => {
     const string = args.join(' ')
