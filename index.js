@@ -1,6 +1,6 @@
 /*
 //  Dev by Thomas Dehennault
-//  A simple discord musique bot
+//  A simple discord music bot
 */
 
 const { PermissionFlagsBits } = require('discord.js');
@@ -64,7 +64,7 @@ Requested by: ${song.user}`);
 });
 
 client.distube.on("addSong", (queue, song) => {
-    queue.textChannel.send(`Ajoute \`${song.name}\` - \`${song.formattedDuration}\` a la file d'attente par ${song.user}`);
+    queue.textChannel.send(`Ajoute \`${song.name}\` - \`${song.formattedDuration}\` à la file d'attente par ${song.user.name}`);
 });
 
 client.distube.on("playList", (queue, playlist, song) => {
@@ -76,12 +76,11 @@ Joue \`${song.name}\` - \`${song.formattedDuration}\``);
 });
 
 client.distube.on("addList", (queue, playlist) => {
-    queue.textChannel.send(`Ajoute \`${playlist.name}\` playlist (${playlist.songs.length} musique) a la file d'attente`);
+    queue.textChannel.send(`Ajoute \`${playlist.name}\` playlist (${playlist.songs.length} musique) à la file d'attente`);
 });
 
 client.distube.on("error", (message, e) => {
     console.error(e)
-    message.channel.send("An error encountered: " + e);
 });
 
 client.on('ready', () => {
